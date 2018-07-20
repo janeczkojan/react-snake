@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './store/reducers';
 import sagas from './store/sagas';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/global';
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -16,17 +16,17 @@ const middleware = applyMiddleware(sagaMiddleware);
 const store = createStore(reducers, useReduxDevTools, middleware);
 
 
+for (const saga of Object.values(sagas)) {
+	sagaMiddleware.run(saga);
+}
+
+
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
 	</Provider>, 
 	document.getElementById('root')
 );
-
-
-for (const saga of sagas) {
-	sagaMiddleware.run(saga);
-}
 
 
 registerServiceWorker();

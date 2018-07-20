@@ -1,0 +1,13 @@
+{
+	"global": {
+		"fontFamily": "Arial, Helvetica, sans-serif"
+	},
+	"header": {
+		"brandFontSize": "30px",
+		"versionFontSize": "11px",
+		"paddingX": "12px",
+		"paddingY": "8px",
+		"backgroundColor": "#28a745",
+		"textColor": "white"
+	}
+}
